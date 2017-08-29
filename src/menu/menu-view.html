@@ -1,0 +1,46 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+
+<link rel="import" href="product-item.html">
+
+<dom-module id="menu-view">
+
+	<template>
+		<template is="dom-repeat" items="[[products]]" as="product">
+			<product-item product="[[product]]"></product-item>
+		</template>
+	</template>
+	<script>
+
+	(function menuViewDefinition(menuView){
+
+		class MenuView extends Polymer.Element{
+			static get is(){return 'menu-view'; }
+
+			static get properties(){
+				return{
+					products:{
+						type:Array,
+						value:[
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'},
+						{title:'Dona', price:'5.33', description:"balls of sweetened dough, fried in hog's fat, and called doughnuts, or olykoeks", type:'Dessert'}
+						]
+					}
+				};
+			}
+		}
+
+		customElements.define(MenuView.is, MenuView);
+
+	})(window.menuView);
+
+	</script>
+</dom-module>

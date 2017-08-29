@@ -1,0 +1,49 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module id="product-item">
+	<template>
+		<style>
+			
+		</style>
+
+		<paper-card image="../../images/no-image-drink-eat.jpg">
+			<div class="card-content">
+				<div class="card-title">
+					<h3>Titulo Card</h3>
+				</div>
+				<div class="card-description">
+					<p>Small plates, salads &amp; sandwiches in an intimate setting.</p>
+				</div>
+			</div>
+		</paper-card>
+	</template>
+	<script>
+		
+	(function productItemDefinion(productItem){
+		'use strict'
+
+		class ProductItem extends Polymer.Element{
+
+			static get is(){return 'product-item';}
+
+			static get properties(){
+
+				return {
+
+					"product":{
+						type:Object,
+						value:{}
+					}
+
+				};
+			}
+
+		}
+
+		customElements.define(ProductItem.is, ProductItem);
+
+	})(window.productItem);
+
+	</script>
+</dom-module>
