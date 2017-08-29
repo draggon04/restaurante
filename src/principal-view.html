@@ -11,9 +11,39 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 
 <link rel="import" href="menu/menu-view.html">
+<link rel="import" href="admin-products/admin-products.html">
 
 <dom-module id="principal-view">
 	<template>
+		<style>
+			.main-title{
+				background-color: yellow;
+			}
+
+			.item{
+				display: block;
+				text-decoration: none;
+				color: black;
+				margin: 0 0 .8rem 0;
+				padding: .8rem 0 .8rem 0.5rem;
+				width: 100%;
+				border-radius: 10%;
+				box-shadow: 1px 1px 1.5px grey;
+				float: left;
+			}
+
+			.iron-selected{
+				background-color: blue;
+				color:white;
+			}
+
+			iron-selector{
+				margin: 0 0 0 10%;
+				display: block;
+				width: 80%;
+			}
+
+		</style>
 
 		<app-location route="{{route}}"></app-location>
 		<app-route route="{{route}}" pattern="/:view" data="{{routeData}}" tail="{{tailRouteData}}"></app-route>
@@ -22,18 +52,20 @@
 			<app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
 				<app-toolbar><div>Menu</div></app-toolbar>
 				<iron-selector selected="[[view]]" attr-for-selected="name" role="navigation">
-					<a name="menu" href="/menu">Menu</a>
+					<a class="item" name="menu" href="/menu">Menu</a>
+					<a class="item" name="adminProducts" href="/adminProducts">Admin Productos</a>
 				</iron-selector>
 			</app-drawer>
 
 			<app-header-layout has-scrolling-region>
 				<app-header slot="header" condenses reveals effects="waterfall">
-					<app-toolbar main-title>
+					<app-toolbar main-title class="main-title">
 						<div>Restaurante</div>
 					</app-toolbar>
 				</app-header>
 				<iron-pages selected="[[view]]" attr-for-selected="name" role="main">
 					<menu-view name="menu"></menu-view>
+					<admin-products name="adminProducts" subroute="{{tailRouteData}}"></admin-products>
 				</iron-pages>
 			</app-header-layout>
 
@@ -56,6 +88,10 @@
 							reflectToAttribute:true,
 							observer:'_pageChanged'
 						},
+						tailRouteData:{
+							type:Object,
+							notify:true
+						},
 						routerData:Object
 					}
 				}
@@ -65,8 +101,8 @@
 				}
 
 				_routeViewChanged(view){					
-					console.log('_routeViewChanged');
-					this.view = view || 'view1';
+					//console.log(`_routeViewChanged`+this.tailRouteData.prefix);
+					this.view = view || 'menu';
 
 					if(!this.$.drawer.persistent){
 						this.$.drawer.close();
@@ -74,7 +110,7 @@
 				}
 
 				_pageChanged(){
-					console.log('_pageChanged');
+					//console.log('_pageChanged');
 				}
 
 			}

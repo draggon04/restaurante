@@ -1,0 +1,21 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="add-product">
+	<template>
+		<h3>Add Product</h3>
+	</template>
+	<script> 
+		(function addProductDefinition(addProduct){ 
+			'use strict'
+
+			class AddProduct extends Polymer.Element{
+				
+				static get is() {return 'add-product';}
+
+			}
+
+			customElements.define(AddProduct.is, AddProduct);
+
+		})(window.addProduct);
+	</script>
+</dom-module>

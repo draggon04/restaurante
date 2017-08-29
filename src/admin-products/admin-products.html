@@ -1,0 +1,77 @@
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="add-product.html">
+
+<dom-module id="admin-products">
+	<template>
+		<style>
+			.iron-selected{
+				background-color: white;
+				text-decoration: none;
+				color: black;
+			}
+		</style>
+
+		<app-location route="{{route}}"></app-location>
+		<app-route route="{{subroute}}" pattern="/:subview" data="{{subrouteData}}" tail="{{subrouteDetailTail}}"></app-route>
+
+		<iron-selector selected="{{subview}}" attr-for-selected="name">
+			<a href="[[subroute.prefix]]/addProduct" name="addProduct">Add Products</a>
+		</iron-selector>
+		
+		<iron-pages selected="{{subview}}" attr-for-selected="name">
+			<add-product name="addProduct"></add-product>
+		</iron-pages>
+
+	</template>
+	<script>
+		(function adminProductsDefinition(adminProducts){
+			'use strict'
+			
+			class AdminProducts extends Polymer.Element{
+				static get is(){return 'admin-products';}
+
+				static get properties(){
+					return {
+						subroute:{
+							type:Object,
+							notify:true,
+							observer:'_subrouteChanged'
+						},
+						subview:{
+							type:Object,
+							reflectToAttribute:true,
+							observer:'_subpageChanged',
+							notify:true
+						},
+						subrouteData:Object
+					};
+				}
+
+				static get observer(){
+					return ['_subrouteViewChanged(subrouteData.subview)'];
+				}
+
+				_subrouteChanged(subroute){
+					this.subview = `addProduct`;
+				}
+
+				_subrouteViewChanged(subview){
+					console.log('_subrouteViewChanged'+subview);
+					this.subview = subview|| 'addProduct';
+				}
+
+				_subpageChanged(){
+					console.log('_subpageChanged');
+				}
+			}
+
+			customElements.define(AdminProducts.is, AdminProducts);
+
+		})(window.adminProducts);
+	</script>
+</dom-module>
