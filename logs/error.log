@@ -1,0 +1,19 @@
+2017/10/07 14:47:39 [emerg] 10324#19756: CreateFile() "C:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf" failed (3: The system cannot find the path specified)
+2017/10/07 15:43:14 [emerg] 13924#21648: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf" failed (3: The system cannot find the path specified)
+2017/10/07 15:55:40 [emerg] 23300#23564: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf" failed (3: The system cannot find the path specified)
+2017/10/07 15:56:15 [emerg] 22052#18200: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf" failed (3: The system cannot find the path specified)
+2017/10/07 15:56:25 [emerg] 1536#17316: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf" failed (3: The system cannot find the path specified)
+2017/10/07 15:57:24 [emerg] 20064#2292: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf" failed (2: The system cannot find the file specified)
+2017/10/07 15:59:44 [emerg] 23052#16872: "server" directive is not allowed here in c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf:1
+2017/10/07 16:01:18 [emerg] 17412#11532: "server" directive is not allowed here in c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf:1
+2017/10/07 16:02:09 [emerg] 8108#12612: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/mime.types" failed (2: The system cannot find the file specified) in c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf:26
+2017/10/07 16:03:46 [emerg] 19892#13008: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/mime.types" failed (2: The system cannot find the file specified) in c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf:26
+2017/10/07 16:04:47 [emerg] 5844#13484: unexpected end of file, expecting "}" in c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf:102
+2017/10/07 16:06:31 [emerg] 10580#20124: unexpected end of file, expecting "}" in c:\Users\margarito.mancilla\Documents\GitHub\restaurante/conf/nginx.conf:94
+2017/10/07 16:07:12 [emerg] 12748#4700: CreateDirectory() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2017/10/07 17:06:48 [notice] 788#4556: signal process started
+2017/10/07 17:06:48 [error] 788#4556: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/10/07 17:07:38 [notice] 4264#10324: signal process started
+2017/10/07 17:07:38 [error] 4264#10324: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/10/07 17:15:21 [notice] 24396#15164: signal process started
+2017/10/07 17:15:21 [error] 24396#15164: CreateFile() "c:\Users\margarito.mancilla\Documents\GitHub\restaurante/logs/nginx.pid" failed (2: The system cannot find the file specified)
